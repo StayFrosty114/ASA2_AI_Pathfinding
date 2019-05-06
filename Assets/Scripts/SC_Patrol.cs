@@ -15,14 +15,14 @@ public class SC_Patrol : MonoBehaviour
         // Captures a reference to the NavMesh component of the agent.
         patrolAgent = GetComponent<NavMeshAgent>();
 
-        // Starting patrol route/
+        // Starting patrol route.
         GotoNextPoint();
     }
 
 
     void GotoNextPoint()
     {
-        // Returns if no points have been set up
+        // Returns if no points have been set up.
         if (points.Length == 0)
             return;
 
@@ -37,8 +37,7 @@ public class SC_Patrol : MonoBehaviour
 
     void Update()
     {
-        // Choose the next destination point when the agent gets
-        // close to the current one.
+        // Choose the next destination point when the agent gets close to the current one.
         if (!patrolAgent.pathPending && patrolAgent.remainingDistance < 0.5f)
             GotoNextPoint();
     }
